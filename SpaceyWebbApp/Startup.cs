@@ -29,6 +29,7 @@ namespace SpaceyWebbApp
             {
                 options.UseSqlServer(Configuration.GetConnectionString("SpaceyString"));
             });
+            services.AddScoped<SqlSpaceData>();
 
             services.AddControllersWithViews();
         }
