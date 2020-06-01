@@ -25,9 +25,10 @@ namespace SpaceyWebbApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string DbName = Environment.MachineName;
             services.AddDbContextPool<SpaceyDbContext>(options => 
             {
-                options.UseSqlServer(Configuration.GetConnectionString("SpaceyString"));
+                options.UseSqlServer(Configuration.GetConnectionString(DbName));
             });
             services.AddScoped<SqlSpaceData>();
 
