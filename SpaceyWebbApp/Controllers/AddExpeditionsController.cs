@@ -21,5 +21,14 @@ namespace SpaceyWebbApp.Controllers
         {
             return View();
         }
+        //Dessa två nedan Iactionresults är Create och baserade på Rocket respektive Destination. Dom behöver en respektive HTTPOST metod med.
+        public IActionResult AddRocket()
+        {
+            return View();
+        }
+        public IActionResult AddDestination()
+        {
+            return View();
+        }
     }
 }

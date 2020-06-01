@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace SpaceyWebbApp.Models
 {
     /// <summary>
-    /// Class for SqlInteractions with our database.
+    /// Class for SqlInteractions with our database. 
     /// </summary>
     public class SqlSpaceData
     {
@@ -16,5 +16,6 @@ namespace SpaceyWebbApp.Models
         {
             this.db = db;
         }
+        //VI BEHÖVER SKAPA METODER FÖR ATT SPARA ROCKETS/DESTINATIONS/EXPEDITIONS FRÅN FRONTENDEN HÄR.
     }
 }

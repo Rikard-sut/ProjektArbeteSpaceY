@@ -1,4 +1,6 @@
-﻿namespace SpaceyWebbApp.Models
+﻿using System.Collections.Generic;
+
+namespace SpaceyWebbApp.Models
 {
     public enum FlightLength
     {
