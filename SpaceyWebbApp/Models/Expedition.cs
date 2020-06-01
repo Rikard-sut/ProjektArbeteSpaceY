@@ -11,12 +11,7 @@ namespace SpaceyWebbApp.Models
         public DateTime Departure { get; set; }
         public int RocketId { get; set; }
         public int DestinationId { get; set; }
-        public FlightLength flightLength { get; set; }
+        public List<Customers> Customers { get; set; }
 
     }
-
-public enum FlightLength
-{
-    Low = 1, Medium = 2, High = 3
-}
 }
