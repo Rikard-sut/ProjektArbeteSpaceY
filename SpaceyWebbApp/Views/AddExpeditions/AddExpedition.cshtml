@@ -1,0 +1,50 @@
+﻿@model SpaceyWebbApp.ViewModels.ExpeditionViewModel
+
+@{
+    ViewData["Title"] = "AddExpedition";
+}
+
+<h1>AddExpedition</h1>
+<h4>Expedition</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddExpedition">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Expedition.Departure" class="control-label"></label>
+                <input asp-for="Expedition.Departure" class="form-control" />
+                <span asp-validation-for="Expedition.Departure" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Expedition.Rocket" class="control-label"></label>
+                <select asp-for="Expedition.Rocket"  class ="form-control">
+                    @foreach(var rocket in Model.Rockets)
+                    {
+                        <option>@rocket.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Expedition.Destination" class="control-label"></label>
+                <select asp-for="Expedition.Destination" class ="form-control">
+                    @foreach(var destination in Model.Destinations)
+                    {
+                        <option>@destination.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

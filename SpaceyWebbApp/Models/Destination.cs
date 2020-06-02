@@ -12,7 +12,7 @@ namespace SpaceyWebbApp.Models
         [Required]
         public string Name { get; set; }
         [Required]
-        public FlightLength expeditionRange { get; set; }
+        public FlightLength ExpeditionRange { get; set; }
 
         //Validate so that only high range rockets can make high range destinations
     }

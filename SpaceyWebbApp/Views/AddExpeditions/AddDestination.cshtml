@@ -18,9 +18,9 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="expeditionRange" class="control-label"></label>
-                <select asp-for="expeditionRange" asp-items="Html.GetEnumSelectList<FlightLength>()" class="form-control"></select>
-                <span asp-validation-for="expeditionRange" class="text-danger"></span>
+                <label asp-for="ExpeditionRange" class="control-label"></label>
+                <select asp-for="ExpeditionRange" asp-items="Html.GetEnumSelectList<FlightLength>()" class="form-control"></select>
+                <span asp-validation-for="ExpeditionRange" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SpaceyWebbApp.Models;
+using SpaceyWebbApp.ViewModels;
 
 namespace SpaceyWebbApp.Controllers
 {
@@ -26,9 +27,29 @@ namespace SpaceyWebbApp.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult AddRocket(Rocket rocket)
+        {
+            _sqlService.AddRocketToDb(rocket);
+            return View();
+        }
         public IActionResult AddDestination()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult AddDestination(Destination destination)
+        {
+            _sqlService.AddDestinationtoDb(destination);
+            return View();
+        }
+        public IActionResult AddExpedition()
+        {
+            var rockets = _sqlService.GetRockets();
+            var destinations = _sqlService.GetDestinations();
+
+            var expeditionViewModel = new ExpeditionViewModel(rockets, destinations);
+            return View(expeditionViewModel);
         }
     }
 }
