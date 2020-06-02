@@ -21,7 +21,7 @@
                 <select asp-for="Expedition.Rocket"  class ="form-control">
                     @foreach(var rocket in Model.Rockets)
                     {
-                        <option>@rocket.Name</option>
+                        <option value="@rocket">@rocket.Name</option>
                     }
                 </select>
             </div>
@@ -30,7 +30,7 @@
                 <select asp-for="Expedition.Destination" class ="form-control">
                     @foreach(var destination in Model.Destinations)
                     {
-                        <option>@destination.Name</option>
+                        <option value="@destination">@destination.Name</option>
                     }
                 </select>
             </div>

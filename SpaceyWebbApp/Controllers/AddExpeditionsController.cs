@@ -51,5 +51,10 @@ namespace SpaceyWebbApp.Controllers
             var expeditionViewModel = new ExpeditionViewModel(rockets, destinations);
             return View(expeditionViewModel);
         }
+        [HttpPost]
+        public IActionResult AddExpedition(Expedition expedition)
+        {
+
+        }
     }
 }
