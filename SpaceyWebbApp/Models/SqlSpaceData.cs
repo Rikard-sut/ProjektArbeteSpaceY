@@ -26,6 +26,12 @@ namespace SpaceyWebbApp.Models
             db.Destinations.Add(destination);
             db.SaveChanges();
         }
+
+        public void AddExpeditionToDb(Expedition expedition)
+        {
+            db.Expeditions.Add(expedition);
+            db.SaveChanges();
+        }
         public List<Rocket> GetRockets()
         {
             var rockets = db.Rockets.Select(x => x).ToList();

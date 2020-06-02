@@ -45,16 +45,17 @@ namespace SpaceyWebbApp.Controllers
         }
         public IActionResult AddExpedition()
         {
-            var rockets = _sqlService.GetRockets();
+            /*var rockets = _sqlService.GetRockets();
             var destinations = _sqlService.GetDestinations();
 
             var expeditionViewModel = new ExpeditionViewModel(rockets, destinations);
-            return View(expeditionViewModel);
+            return View(expeditionViewModel);*/
+            return View();
         }
         [HttpPost]
         public IActionResult AddExpedition(Expedition expedition)
         {
-
+            return View();
         }
     }
 }
