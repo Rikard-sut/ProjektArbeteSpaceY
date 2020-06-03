@@ -11,7 +11,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="AddRocket">
+        <form id="form" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
@@ -26,7 +26,8 @@
             <div class="form-group">
                 <label asp-for="Seats" class="control-label"></label>
                 <select asp-for="Seats" class="form-control">
-                    @foreach(var item in Enum.GetValues(typeof(FlightLength))){
+                    @foreach (var item in Enum.GetValues(typeof(FlightLength)))
+                    {
                         <option value="@Convert.ToInt32(item)">@Convert.ToInt32(item)</option>
                     }
                 </select>
@@ -44,5 +45,6 @@
 </div>
 
 @section Scripts {
+    <script src="~/js/rockets/rocket.js"></script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

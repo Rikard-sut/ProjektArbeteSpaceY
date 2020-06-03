@@ -34,7 +34,7 @@ namespace SpaceyWebbApp.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public Rocket Post([FromBody]Rocket rocket)
+        public Rocket Post(Rocket rocket)
         {
             _sqlService.AddRocketToDb(rocket);
             return rocket;
