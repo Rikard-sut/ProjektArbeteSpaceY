@@ -32,6 +32,20 @@ namespace SpaceyWebbApp.Models
             db.Expeditions.Add(expedition);
             db.SaveChanges();
         }
+
+        public List<Expedition> GetExpeditions()
+        {
+            var expeditions = db.Expeditions.Select(x => x).ToList();
+            foreach(var expedition in expeditions)
+            {
+                var rocket = db.Rockets.Where(x => x.RocketId == expedition.RocketId).FirstOrDefault();
+                var destination = db.Destinations.Where(x => x.DestinationId == expedition.DestinationId).FirstOrDefault();
+
+                expedition.Rocket = rocket;
+                expedition.Destination = destination;
+            }
+            return expeditions;
+        }
         public List<Rocket> GetRockets()
         {
             var rockets = db.Rockets.Select(x => x).ToList();

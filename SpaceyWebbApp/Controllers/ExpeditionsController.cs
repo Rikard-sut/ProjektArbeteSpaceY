@@ -20,9 +20,9 @@ namespace SpaceyWebbApp.Controllers
 
         // GET: api/<controller>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Expedition> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _sqlService.GetExpeditions();
         }
 
         // GET api/<controller>/5
