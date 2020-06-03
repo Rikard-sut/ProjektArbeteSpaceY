@@ -29,12 +29,31 @@ function fetchRockets() {
         }
     });
 }
+//Den behöver bara detta. resten är för att logga errrors osv, får inte det att funka.
+$("#form").submit(function () {
+    var jqxhr = $.post('/api/expeditions', $('#form').serialize()) /*.success(function () {
+        console.log("Sucess")
+        console.log(jqxhr);
+         })
+        .error(function () {
+            console.log("Error posting the update.")
+            $('#message').html("Error posting the update.");
+        });
+        return false; */
+});
 
+
+
+
+
+
+
+/*
 const form = document.querySelector('form')
 form.addEventListener('submit', (event) => {
     var fd = new FormData(document.querySelector("form"));
     $.ajax({
-        url: "/api/expeditions",
+        url: "api/expeditions",
         type: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -43,23 +62,12 @@ form.addEventListener('submit', (event) => {
         processData: false,  // tell jQuery not to process the data
         contentType: false   // tell jQuery not to set contentType
     });
-})
+})*/
 
 
-/*
-    $("form").submit(function () {
-        var jqxhr = $.post('/api/expeditions', $('form').serialize())
-            .success(function () {
-                var loc = jqxhr.getResponseHeader('Location');
-                var a = $('<a />', {href: loc, text: loc });
-    $('#message').html(a);
-})
-            .error(function () {
-        $('#message').html("Error posting the update.");
-});
-return false;
-});
-*/
+
+
+
 /*
 const form = document.querySelector('form')
 form.addEventListener('submit', (event) => {

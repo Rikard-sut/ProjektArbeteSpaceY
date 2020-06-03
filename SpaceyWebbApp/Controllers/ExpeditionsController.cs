@@ -34,9 +34,9 @@ namespace SpaceyWebbApp.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public Expedition Post([FromBody]Expedition expedition)
+        public Expedition Post(Expedition expedition)
         {
-            //_sqlService.AddExpeditionToDb(expedition);
+            _sqlService.AddExpeditionToDb(expedition);
             return expedition;
         }
 
