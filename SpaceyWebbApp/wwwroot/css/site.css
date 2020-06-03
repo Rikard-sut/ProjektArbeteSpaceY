@@ -59,13 +59,66 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: 'Audiowide';
 }
+
+#background-image {
+    background-image: url('../images/darksky.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+.navbar-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#navbar-logo {
+    text-align: center;
+    grid-column: 2;
+}
+
+#navbar-logo-text {
+    font-size: 2em;
+}
+
+#navbar-dropdown {
+    text-align: right;
+    grid-column: 3;
+}
+
+.footer-container {
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#copy-right {
+    grid-column: 1;
+    padding-left: 20px;
+}
+
+#socials {
+    grid-column: 2;
+    font-size: 2.5em;
+    text-align:right;
+    padding-right: 20px;
+}
+
+#socials:hover {
+    cursor: pointer;
+
 }
