@@ -29,65 +29,16 @@ function fetchRockets() {
         }
     });
 }
-//Den behöver bara detta. resten är för att logga errrors osv, får inte det att funka.
-$("#form").submit(function () {
-    var jqxhr = $.post('/api/expeditions', $('#form').serialize()) /*.success(function () {
-        console.log("Sucess")
-        console.log(jqxhr);
-         })
-        .error(function () {
-            console.log("Error posting the update.")
-            $('#message').html("Error posting the update.");
-        });
-        return false; */
-});
 
-
-
-
-
-
-
-/*
+//Post to backend
 const form = document.querySelector('form')
 form.addEventListener('submit', (event) => {
-    var fd = new FormData(document.querySelector("form"));
-    $.ajax({
-        url: "api/expeditions",
-        type: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        data: JSON.stringify(fd),
-        processData: false,  // tell jQuery not to process the data
-        contentType: false   // tell jQuery not to set contentType
-    });
-})*/
+    event.preventDefault()
+    var jqxhr = $.post('/api/expeditions', $('#form').serialize())
+        .done(() => {
+            //redirect to rockets list
+        })
+        .fail(() => {
 
-
-
-
-
-/*
-const form = document.querySelector('form')
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    var result = {};
-    $.each($('form').serializeArray(), function () {
-        result[this.name] = this.value;
-    });
-
-    var settings = {
-        "url": "https://localhost:44314/api/expeditions",
-        "method": "POST",
-        "timeout": 0,
-        "headers": {
-            "Content-Type": "application/json"
-        },
-        "data": JSON.stringify(result)
-    }
-
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-    });
-})*/
+        })
+})
