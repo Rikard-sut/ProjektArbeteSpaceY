@@ -34,8 +34,10 @@ namespace SpaceyWebbApp.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public Destination Post(Destination destination)
         {
+            _sqlService.AddDestinationtoDb(destination);
+            return destination;
         }
 
         // PUT api/<controller>/5
