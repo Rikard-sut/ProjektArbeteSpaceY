@@ -27,9 +27,9 @@ namespace SpaceyWebbApp.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Expedition Get(int id)
         {
-            return "value";
+            return _sqlService.GetExpeditionById(id);
         }
 
         // POST api/<controller>
@@ -41,15 +41,17 @@ namespace SpaceyWebbApp.Controllers
         }
 
         // PUT api/<controller>/5
-        [HttpPut("{id}")]
+        /*[HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
         {
-        }
+        }*/
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public Expedition Delete(int id)
         {
+            var deletedExpedition = _sqlService.DeleteExpedition(id);
+            return deletedExpedition;
         }
     }
 }

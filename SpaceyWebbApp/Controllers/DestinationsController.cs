@@ -36,7 +36,7 @@ namespace SpaceyWebbApp.Controllers
         [HttpPost]
         public Destination Post(Destination destination)
         {
-            _sqlService.AddDestinationtoDb(destination);
+            _sqlService.AddDestinationToDb(destination);
             return destination;
         }
 
