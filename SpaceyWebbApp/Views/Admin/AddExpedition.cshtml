@@ -12,9 +12,9 @@
         <form id="form" method="post">
             <!--<div asp-validation-summary="ModelOnly" class="text-danger"></div>-->
             <div class="form-group">
-                <label for="departure" class="control-label">Dep</label>
-                <input type="datetime-local" name="departure" class="form-control" />
-                <!--<span asp-validation-for="Departure" class="text-danger"></span>-->
+                <label asp-for="Departure" class="control-label">Dep</label>
+                <input asp-for="Departure" type="datetime-local" name="departure" class="form-control" required />
+                <span asp-validation-for="Departure" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label for="rocketId" class="control-label">Rocket</label>
@@ -41,4 +41,4 @@
 @section Scripts {
     <script src="~/js/expeditions/expedition.post.js"></script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
+}
