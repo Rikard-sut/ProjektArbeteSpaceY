@@ -64,6 +64,7 @@ body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
     font-family: 'Audiowide';
+    color: white;
 }
 
 #background-image {
@@ -137,6 +138,11 @@ body {
 #footer-middle-div {
     grid-column: 2;
     text-align: center;
+}
+
+table {
+    color: black;
+    background-color: white;
 }
 
 .table-row {

@@ -8,6 +8,7 @@
 $(function () {
     var jqxhr = $.get('/api/expeditions/' + getParam())
         .done(() => {
+            populateDetails(jqxhr.responseJSON)
             populateCustomerTable(jqxhr.responseJSON.customers)
         })
         .fail(() => {
@@ -20,4 +21,11 @@ function populateCustomerTable(customers) {
         var markup = "<tr><td>" + customer.fullName + "<td></tr> ";
         $('.table').append(markup)
     }
+}
+
+function populateDetails(details) {
+    let departure = new Date(details.departure).toTimeString();
+    document.querySelector('#departure').innerText = 'Departure: ' + departure;
+    document.querySelector('#rocket').innerText = 'Rocket: ' + details.rocket.name;
+    document.querySelector('#destination').innerText = 'Destination: ' + details.destination.name;
 }
