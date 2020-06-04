@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Expeditions";
+}
+
+<h1>Expeditions</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Departure</th>
+            <th>Destination</th>
+            <th>Rocket</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+@section Scripts {
+    <script src="~/js/expeditions/expedition.get.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

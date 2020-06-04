@@ -6,28 +6,18 @@
     <title>@ViewData["Title"] - SpaceyWebbApp</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/719b82a84d.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body id="background-image">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SpaceyWebbApp</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="AddExpeditions" asp-action="Index">Add Expeditions</a>
-                        </li>
-                    </ul>
+        <nav id="header-field" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
+            <div class="navbar-container">
+                <div id="navbar-logo">
+                    <a id="navbar-logo-text" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SPACEY</a>
+                </div>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" id="navbar-dropdown">
+                    <a>Login</a>
                 </div>
             </div>
         </nav>
@@ -39,8 +29,14 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - SpaceyWebbApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="footer-container">
+            <div id="copy-right">&copy; 2020</div>
+            <div id="footer-middle-div"><a class="nav-link text-dark" asp-area="" asp-controller="AddExpeditions" asp-action="Index">Add Expeditions</a></div>
+            <div id="socials">
+                <a><i class="fab fa-facebook-square"></i></a>
+                <a><i class="fab fa-instagram-square"></i></a>
+                <a><i class="fab fa-twitter-square"></i></a>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

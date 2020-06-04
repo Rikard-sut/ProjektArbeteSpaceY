@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "Rockets";
+}
+
+<h1>Rockets</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Range</th>
+            <th>Seats</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+@section Scripts {
+    <script src="~/js/rockets/rocket.get.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
