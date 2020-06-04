@@ -108,11 +108,15 @@ namespace SpaceyWebbApp.Models
         public Expedition GetExpeditionById(int id)
         {
             var expedition = db.Expeditions.Where(x => x.ExpeditionId == id).FirstOrDefault();
-            expedition.Rocket = db.Rockets.Where(x => x.RocketId == expedition.RocketId).FirstOrDefault();
-            expedition.Destination = db.Destinations.Where(x => x.DestinationId == expedition.DestinationId).FirstOrDefault();
-            expedition.Customers = db.Customers.Where(x => x.ExpeditionId == expedition.ExpeditionId).ToList();
-            expedition.Departure.ToShortDateString();
-            return expedition;
+            if(expedition != null)
+            {
+                expedition.Rocket = db.Rockets.Where(x => x.RocketId == expedition.RocketId).FirstOrDefault();
+                expedition.Destination = db.Destinations.Where(x => x.DestinationId == expedition.DestinationId).FirstOrDefault();
+                expedition.Customers = db.Customers.Where(x => x.ExpeditionId == expedition.ExpeditionId).ToList();
+                expedition.Departure.ToShortDateString();
+                return expedition;
+            }
+            return null;
         }
 
         public Expedition DeleteExpedition(int id)
