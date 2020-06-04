@@ -12,6 +12,7 @@ namespace SpaceyWebbApp.Models
         {
 
         }
+        public DbSet<User> Users { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Destination> Destinations { get; set; }
         public DbSet<Rocket> Rockets { get; set; }

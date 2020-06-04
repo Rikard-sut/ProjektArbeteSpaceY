@@ -17,6 +17,22 @@ namespace SpaceyWebbApp.Models
             this.db = db;
         }
 
+        #region User
+        public List<User> GetUsers()
+        {
+            return db.Users.Select(x => x).ToList();
+        }
+        public bool LoginUser(User user)
+        {
+            var foundUser = db.Users.Where(x => x.Email == user.Email).FirstOrDefault();
+            if (foundUser != null)
+            {
+                return true;
+            }
+            return false;
+        }
+        #endregion
+
         #region Rocket
         public int AddRocket(Rocket rocket)
         {
