@@ -96,6 +96,7 @@ namespace SpaceyWebbApp.Models
             expedition.Rocket = db.Rockets.Where(x => x.RocketId == expedition.RocketId).FirstOrDefault();
             expedition.Destination = db.Destinations.Where(x => x.DestinationId == expedition.DestinationId).FirstOrDefault();
             expedition.Customers = db.Customers.Where(x => x.ExpeditionId == expedition.ExpeditionId).ToList();
+            expedition.Departure.ToShortDateString();
             return expedition;
         }
 

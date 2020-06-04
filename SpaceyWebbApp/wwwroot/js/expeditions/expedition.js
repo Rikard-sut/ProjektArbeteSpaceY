@@ -24,7 +24,8 @@ function populateCustomerTable(customers) {
 }
 
 function populateDetails(details) {
-    let departure = new Date(details.departure).toTimeString();
+    let departure = details.departure;
+    departure = departure.replace('T', ' ');
     document.querySelector('#departure').innerText = 'Departure: ' + departure;
     document.querySelector('#rocket').innerText = 'Rocket: ' + details.rocket.name;
     document.querySelector('#destination').innerText = 'Destination: ' + details.destination.name;
