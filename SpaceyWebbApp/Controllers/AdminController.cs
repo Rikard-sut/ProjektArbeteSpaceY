@@ -12,8 +12,21 @@ namespace SpaceyWebbApp.Controllers
         {
             return View();
         }
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult AddRocket()
+        {
+            return View();
+        }
 
-        public IActionResult Expeditions()
+        public IActionResult AddDestination()
+        {
+            return View();
+        }
+
+        public IActionResult AddExpedition()
         {
             return View();
         }
