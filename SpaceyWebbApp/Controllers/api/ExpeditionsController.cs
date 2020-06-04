@@ -36,8 +36,11 @@ namespace SpaceyWebbApp.Controllers
         [HttpPost]
         public Expedition Post(Expedition expedition)
         {
-            _sqlService.AddExpeditionToDb(expedition);
-            return expedition;
+            if (_sqlService.AddExpedition(expedition) > 0)
+            {
+                return expedition;
+            }
+            return null;
         }
 
         // PUT api/<controller>/5
@@ -50,8 +53,7 @@ namespace SpaceyWebbApp.Controllers
         [HttpDelete("{id}")]
         public Expedition Delete(int id)
         {
-            var deletedExpedition = _sqlService.DeleteExpedition(id);
-            return deletedExpedition;
+            return _sqlService.DeleteExpedition(id);
         }
     }
 }

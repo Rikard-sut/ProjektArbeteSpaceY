@@ -27,17 +27,20 @@ namespace SpaceyWebbApp.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Rocket Get(int id)
         {
-            return "value";
+            return _sqlService.GetRocketById(id);
         }
 
         // POST api/<controller>
         [HttpPost]
         public Rocket Post(Rocket rocket)
         {
-            _sqlService.AddRocketToDb(rocket);
-            return rocket;
+            if(_sqlService.AddRocket(rocket) > 0)
+            {
+                return rocket;
+            }
+            return null;
         }
 
         // PUT api/<controller>/5
@@ -48,8 +51,9 @@ namespace SpaceyWebbApp.Controllers
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public Rocket Delete(int id)
         {
+            return _sqlService.DeleteRocket(id);
         }
     }
 }

@@ -27,17 +27,20 @@ namespace SpaceyWebbApp.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Destination Get(int id)
         {
-            return "value";
+            return _sqlService.GetDestinationById(id);
         }
 
         // POST api/<controller>
         [HttpPost]
         public Destination Post(Destination destination)
         {
-            _sqlService.AddDestinationToDb(destination);
-            return destination;
+            if (_sqlService.AddDestination(destination) > 0)
+            {
+                return destination;
+            }
+            return null;
         }
 
         // PUT api/<controller>/5
@@ -48,8 +51,9 @@ namespace SpaceyWebbApp.Controllers
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public Destination Delete(int id)
         {
+            return _sqlService.DeleteDestination(id);
         }
     }
 }

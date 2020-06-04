@@ -18,10 +18,10 @@ namespace SpaceyWebbApp.Models
         }
 
         #region Rocket
-        public void AddRocketToDb(Rocket rocket)
+        public int AddRocket(Rocket rocket)
         {
             db.Rockets.Add(rocket);
-            db.SaveChanges();
+            return db.SaveChanges();
         }
         public List<Rocket> GetRockets()
         {
@@ -32,7 +32,6 @@ namespace SpaceyWebbApp.Models
         public Rocket GetRocketById(int id)
         {
             var rocket = db.Rockets.Where(x => x.RocketId == id).FirstOrDefault();
-            //Här kan vi lägga även hämta vilka expeditions som är kopplade till denna rocket
             return rocket;
         }
         public Rocket DeleteRocket(int id)
@@ -45,10 +44,10 @@ namespace SpaceyWebbApp.Models
         #endregion Rocket
 
         #region Destination
-        public void AddDestinationToDb(Destination destination)
+        public int AddDestination(Destination destination)
         {
             db.Destinations.Add(destination);
-            db.SaveChanges();
+            return db.SaveChanges();
         }
         public List<Destination> GetDestinations()
         {
@@ -72,10 +71,10 @@ namespace SpaceyWebbApp.Models
         #endregion Destination
 
         #region Expedition
-        public void AddExpeditionToDb(Expedition expedition)
+        public int AddExpedition(Expedition expedition)
         {
             db.Expeditions.Add(expedition);
-            db.SaveChanges();
+            return db.SaveChanges();
         }
 
         public List<Expedition> GetExpeditions()
