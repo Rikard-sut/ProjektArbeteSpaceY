@@ -139,3 +139,6 @@ body {
     text-align: center;
 }
 
+.table-row {
+    cursor: pointer;
+}

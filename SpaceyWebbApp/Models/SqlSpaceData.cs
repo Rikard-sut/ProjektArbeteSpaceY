@@ -83,11 +83,9 @@ namespace SpaceyWebbApp.Models
             var expeditions = db.Expeditions.Select(x => x).ToList();
             foreach(var expedition in expeditions)
             {
-                var rocket = db.Rockets.Where(x => x.RocketId == expedition.RocketId).FirstOrDefault();
-                var destination = db.Destinations.Where(x => x.DestinationId == expedition.DestinationId).FirstOrDefault();
-
-                expedition.Rocket = rocket;
-                expedition.Destination = destination;
+                expedition.Rocket = db.Rockets.Where(x => x.RocketId == expedition.RocketId).FirstOrDefault();
+                expedition.Destination = db.Destinations.Where(x => x.DestinationId == expedition.DestinationId).FirstOrDefault();
+                expedition.Customers = db.Customers.Where(x => x.ExpeditionId == expedition.ExpeditionId).ToList();
             }
             return expeditions;
         }
@@ -95,12 +93,9 @@ namespace SpaceyWebbApp.Models
         public Expedition GetExpeditionById(int id)
         {
             var expedition = db.Expeditions.Where(x => x.ExpeditionId == id).FirstOrDefault();
-            var rocket = db.Rockets.Where(x => x.RocketId == expedition.RocketId).FirstOrDefault();
-            var destination = db.Destinations.Where(x => x.DestinationId == expedition.DestinationId).FirstOrDefault();
-
-            expedition.Rocket = rocket;
-            expedition.Destination = destination;
-
+            expedition.Rocket = db.Rockets.Where(x => x.RocketId == expedition.RocketId).FirstOrDefault();
+            expedition.Destination = db.Destinations.Where(x => x.DestinationId == expedition.DestinationId).FirstOrDefault();
+            expedition.Customers = db.Customers.Where(x => x.ExpeditionId == expedition.ExpeditionId).ToList();
             return expedition;
         }
 
