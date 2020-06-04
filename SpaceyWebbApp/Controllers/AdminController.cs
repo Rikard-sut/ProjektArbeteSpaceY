@@ -8,11 +8,17 @@ namespace SpaceyWebbApp.Controllers
 {
     public class AdminController : Controller
     {
-        public IActionResult Rockets()
-        {
-            return View();
-        }
+        
         public IActionResult Index()
+        {
+            if(IsLoggedIn())
+            {
+                return View();
+            }
+            return Redirect("/login");
+        }
+
+        public IActionResult Rockets()
         {
             return View();
         }
@@ -35,6 +41,11 @@ namespace SpaceyWebbApp.Controllers
         public IActionResult AddExpedition()
         {
             return View();
+        }
+
+        public bool IsLoggedIn()
+        {
+            return true;
         }
     }
 }
