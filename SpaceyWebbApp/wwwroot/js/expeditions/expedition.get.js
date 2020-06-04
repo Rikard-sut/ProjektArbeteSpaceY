@@ -10,7 +10,14 @@
 
 function populateTable(expeditions) {
     for (const expedition of expeditions) {
-        var markup = "<tr><td>" + expedition.departure + "</td><td>" + expedition.destination.name + "</td><td>" + expedition.rocket.name + "</td></tr>";
+        const bookedseats = 0;
+        if (expedition.customers) {
+            bookedseats = expedition.customers.length;
+        }
+        
+        
+        console.log(bookedseats);
+        var markup = "<tr><td>" + expedition.departure + "</td><td>" + expedition.destination.name + "</td><td>" + expedition.rocket.name + "</td><td>" + bookedseats + "/" + expedition.rocket.seats + "</td> </tr> ";
         $('.table').append(markup)
     }
 }
