@@ -4,7 +4,7 @@ form.addEventListener('submit', (event) => {
     event.preventDefault()
     var jqxhr = $.post('/api/destinations', $('#form').serialize())
         .done(() => {
-            location.reload()
+            window.location = '/admin/adddestination'
         })
         .fail(() => {
 

@@ -1,6 +1,4 @@
-﻿//KKolla i submodeler för specifika js
-$(document).ready(function () {
-    $('.table').DataTable({
-    });
+﻿$(document).ajaxComplete(function () {
+    $('.table').DataTable({ "bDestroy": true });
     $('.dataTables_length').addClass('bs-select');
 });

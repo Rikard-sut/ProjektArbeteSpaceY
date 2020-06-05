@@ -36,7 +36,7 @@ form.addEventListener('submit', (event) => {
     event.preventDefault()
     var jqxhr = $.post('/api/expeditions', $('#form').serialize())
         .done(() => {
-            window.location = '/admin/'
+            //redirect to rockets list
         })
         .fail(() => {
 
