@@ -75,14 +75,13 @@ body {
     background-size: cover;
 }
 
-.footer {
+/*.footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 50px;
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
-}
+}*/
 
 .navbar-container {
     width: 100%;
@@ -112,33 +111,7 @@ body {
     font-size: 1.5em;
 }
 
-.footer-container {
-    background-color: white;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: 50px;
-}
 
-#copy-right {
-    grid-column: 1;
-    padding-left: 20px;
-}
-
-#socials {
-    grid-column: 3;
-    font-size: 2.5em;
-    text-align: right;
-    padding-right: 20px;
-}
-
-    #socials:hover {
-        cursor: pointer;
-    }
-
-#footer-middle-div {
-    grid-column: 2;
-    text-align: center;
-}
 
 table {
     color: black;
@@ -147,4 +120,8 @@ table {
 
 .table-row {
     cursor: pointer;
+}
+
+footer > div {
+    height:inherit;
 }
