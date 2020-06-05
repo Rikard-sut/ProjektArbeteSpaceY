@@ -30,3 +30,9 @@ function populateDetails(details) {
     document.querySelector('#rocket').innerText = 'Rocket: ' + details.rocket.name;
     document.querySelector('#destination').innerText = 'Destination: ' + details.destination.name;
 }
+
+$(document).ready(function () {
+    $('.table').DataTable({
+    });
+    $('.dataTables_length').addClass('bs-select');
+});
