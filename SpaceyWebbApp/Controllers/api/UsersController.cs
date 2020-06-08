@@ -27,7 +27,7 @@ namespace SpaceyWebbApp.Controllers.api
         [HttpPost]
         public bool Login(User user)
         {
-            return _sqlService.LoginUser(user);
+            return user.LoggedIn = _sqlService.LoginUser(user);
         }
     }
 }
