@@ -8,7 +8,6 @@ namespace SpaceyWebbApp.Controllers
 {
     public class AdminController : Controller
     {
-        
         public IActionResult Index()
         {
             if(IsLoggedIn())

@@ -33,14 +33,16 @@ function populateDetails(details) {
 
 const deleteButton = document.querySelector("#deleteButton")
 deleteButton.addEventListener('click', () => {
-    var jqxhr = $.delete('/api/expeditions/' + getParam())
+    $.ajax({
+        url: '/api/expeditions/' + getParam(),
+        method: 'DELETE'
+    })
         .done(() => {
-            console.log("deleted")
+            console.log('deleted')
         })
         .fail(() => {
-            console.log("Failed")
+            console.log('fail')
         })
-
 })
 
 
