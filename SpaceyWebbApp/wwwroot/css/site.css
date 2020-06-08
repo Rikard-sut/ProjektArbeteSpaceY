@@ -28,6 +28,7 @@ a {
 -------------------------------------------------- */
 html {
     font-size: 14px;
+    height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -39,6 +40,7 @@ html {
 body {
     font-family: 'Audiowide';
     color: white;
+    height: 100%;
 }
 
 .border-top {
