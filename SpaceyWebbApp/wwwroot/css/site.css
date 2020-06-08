@@ -53,20 +53,6 @@ button.accept-policy {
     line-height: inherit;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
-    font-family: 'Audiowide';
-    color: white;
-}
-
 #background-image {
     background-image: url('../img/background.png');
     height: 100%;
@@ -75,26 +61,22 @@ body {
     background-size: cover;
 }
 
-/*.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    white-space: nowrap;
-    line-height: 60px; /* Vertically center the text there */
-}*/
+#header-field {
+    background-color: transparent;
+}
 
 .navbar-container {
+    border-style: dashed;
+    border-color: white;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: transparent;
 }
 
-#header-field {
-    background-color: transparent;
-}
-
 #navbar-logo {
+    border-style: dashed;
+    border-color: white;
     text-align: center;
     grid-column: 2;
 }
@@ -109,9 +91,9 @@ body {
     grid-column: 3;
     color: white;
     font-size: 1.5em;
+    border-style: dashed;
+    border-color: white;
 }
-
-
 
 table {
     color: black;
