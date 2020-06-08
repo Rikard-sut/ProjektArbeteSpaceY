@@ -31,6 +31,19 @@ function populateDetails(details) {
     document.querySelector('#destination').innerText = 'Destination: ' + details.destination.name;
 }
 
+const deleteButton = document.querySelector("#deleteButton")
+deleteButton.addEventListener('click', () => {
+    var jqxhr = $.delete('/api/expeditions/' + getParam())
+        .done(() => {
+            console.log("deleted")
+        })
+        .fail(() => {
+            console.log("Failed")
+        })
+
+})
+
+
 $(document).ajaxComplete(function () {
     $('.table').DataTable({});
     $('.dataTables_length').addClass('bs-select');

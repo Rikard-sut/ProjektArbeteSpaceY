@@ -5,7 +5,7 @@ fetchDestinations()
 fetchRockets()
 
 function fetchDestinations() {
-    $.get("https://localhost:44314/api/destinations", function (data) {
+    $.get("/api/destinations", function (data) {
         console.log(data)
         for (const item of data) {
             const option = document.createElement('option')
@@ -18,7 +18,7 @@ function fetchDestinations() {
 }
 
 function fetchRockets() {
-    $.get("https://localhost:44314/api/rockets", function (data) {
+    $.get("/api/rockets", function (data) {
         console.log(data)
         for (const item of data) {
             const option = document.createElement('option')
