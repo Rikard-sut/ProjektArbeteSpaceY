@@ -36,6 +36,11 @@ html {
     }
 }
 
+body {
+    font-family: 'Audiowide';
+    color: white;
+}
+
 .border-top {
     border-top: 1px solid #e5e5e5;
 }
@@ -66,8 +71,6 @@ button.accept-policy {
 }
 
 .navbar-container {
-    border-style: dashed;
-    border-color: white;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -75,8 +78,6 @@ button.accept-policy {
 }
 
 #navbar-logo {
-    border-style: dashed;
-    border-color: white;
     text-align: center;
     grid-column: 2;
 }
@@ -91,8 +92,6 @@ button.accept-policy {
     grid-column: 3;
     color: white;
     font-size: 1.5em;
-    border-style: dashed;
-    border-color: white;
 }
 
 table {
