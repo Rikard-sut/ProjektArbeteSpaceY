@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SpaceyWebbApp.Models;
 
 namespace SpaceyWebbApp.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         public IActionResult Index()
@@ -17,12 +19,10 @@ namespace SpaceyWebbApp.Controllers
             }
             return Redirect("/login");
         }
-
         public IActionResult Rockets()
         {
             return View();
         }
-
         public IActionResult Expedition()
         {
             return View();
@@ -32,7 +32,6 @@ namespace SpaceyWebbApp.Controllers
         {
             return View();
         }
-
         public IActionResult AddDestination()
         {
             return View();

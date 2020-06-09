@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SpaceyWebbApp.Migrations
 {
-    public partial class Initiamiration : Migration
+    public partial class first1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,26 +14,11 @@ namespace SpaceyWebbApp.Migrations
                     DestinationId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: false),
-                    expeditionRange = table.Column<int>(nullable: false)
+                    ExpeditionRange = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Destinations", x => x.DestinationId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Expeditions",
-                columns: table => new
-                {
-                    ExpeditionId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Departure = table.Column<DateTime>(nullable: false),
-                    RocketId = table.Column<int>(nullable: false),
-                    DestinationId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Expeditions", x => x.ExpeditionId);
                 });
 
             migrationBuilder.CreateTable(
@@ -49,6 +34,47 @@ namespace SpaceyWebbApp.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Rockets", x => x.RocketId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Email = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.UserId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Expeditions",
+                columns: table => new
+                {
+                    ExpeditionId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Departure = table.Column<DateTime>(nullable: false),
+                    RocketId = table.Column<int>(nullable: false),
+                    DestinationId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Expeditions", x => x.ExpeditionId);
+                    table.ForeignKey(
+                        name: "FK_Expeditions_Destinations_DestinationId",
+                        column: x => x.DestinationId,
+                        principalTable: "Destinations",
+                        principalColumn: "DestinationId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Expeditions_Rockets_RocketId",
+                        column: x => x.RocketId,
+                        principalTable: "Rockets",
+                        principalColumn: "RocketId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -76,6 +102,16 @@ namespace SpaceyWebbApp.Migrations
                 name: "IX_Customers_ExpeditionId",
                 table: "Customers",
                 column: "ExpeditionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Expeditions_DestinationId",
+                table: "Expeditions",
+                column: "DestinationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Expeditions_RocketId",
+                table: "Expeditions",
+                column: "RocketId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -84,13 +120,16 @@ namespace SpaceyWebbApp.Migrations
                 name: "Customers");
 
             migrationBuilder.DropTable(
+                name: "Users");
+
+            migrationBuilder.DropTable(
+                name: "Expeditions");
+
+            migrationBuilder.DropTable(
                 name: "Destinations");
 
             migrationBuilder.DropTable(
                 name: "Rockets");
-
-            migrationBuilder.DropTable(
-                name: "Expeditions");
         }
     }
 }

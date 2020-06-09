@@ -10,8 +10,8 @@ using SpaceyWebbApp.Models;
 namespace SpaceyWebbApp.Migrations
 {
     [DbContext(typeof(SpaceyDbContext))]
-    [Migration("20200604215923_init2")]
-    partial class init2
+    [Migration("20200608115342_first1")]
+    partial class first1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

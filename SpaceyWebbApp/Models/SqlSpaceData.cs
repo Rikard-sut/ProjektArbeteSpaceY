@@ -24,7 +24,7 @@ namespace SpaceyWebbApp.Models
         }
         public bool LoginUser(User user)
         {
-            var foundUser = db.Users.Where(x => x.Email == user.Email).FirstOrDefault();
+            var foundUser = db.Users.Where(x => x.Email == user.Email && x.Password == user.Password).FirstOrDefault();
             if (foundUser != null)
             {
                 return true;
