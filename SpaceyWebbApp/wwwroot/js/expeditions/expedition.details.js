@@ -18,7 +18,7 @@ $(function () {
 
 function populateCustomerTable(customers) {
     for (const customer of customers) {
-        var markup = "<tr><td>" + customer.fullName + "<td></tr> ";
+        var markup = "<tr><td>" + customer.fullName + "<td><td>" + customer.seatNumber + "</td></tr>";
         $('.table').append(markup)
     }
 }

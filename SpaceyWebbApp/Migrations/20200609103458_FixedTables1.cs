@@ -6,8 +6,6 @@ namespace SpaceyWebbApp.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Users");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
