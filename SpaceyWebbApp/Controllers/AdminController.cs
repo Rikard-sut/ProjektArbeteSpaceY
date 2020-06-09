@@ -13,11 +13,7 @@ namespace SpaceyWebbApp.Controllers
     {
         public IActionResult Index()
         {
-            if(IsLoggedIn())
-            {
-                return View();
-            }
-            return Redirect("/login");
+            return View();
         }
         public IActionResult Rockets()
         {
@@ -40,11 +36,6 @@ namespace SpaceyWebbApp.Controllers
         public IActionResult AddExpedition()
         {
             return View();
-        }
-
-        public bool IsLoggedIn()
-        {
-            return true;
         }
     }
 }
