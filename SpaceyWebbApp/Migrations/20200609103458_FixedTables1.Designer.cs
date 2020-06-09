@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SpaceyWebbApp.Models;
 
 namespace SpaceyWebbApp.Migrations
 {
     [DbContext(typeof(SpaceyDbContext))]
-    partial class SpaceyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200609103458_FixedTables1")]
+    partial class FixedTables1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -16,9 +16,6 @@
                 <div id="navbar-logo">
                     <a id="navbar-logo-text" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SPACEY</a>
                 </div>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" id="navbar-dropdown">
-                    <partial name="_LoginPartial" />
-                </div>
             </div>
         </nav>
     </header>
@@ -27,13 +24,13 @@
             @RenderBody()
         </main>
     </div>
+    <div class="fixed-top d-sm-inline-flex flex-sm-row-reverse"><partial name="_LoginPartial" /></div>
 
     <footer class="fixed-bottom">
         <div class="container ">
             <div class="row">
                 <div class="col-md-3 mx-auto text-center" id="copy-right">&copy; 2020</div>
                 <hr class="clearfix w-100 d-md-none">
-                <div>Made by Linus Carl & Rikard</div>
                 <hr class="clearfix w-100 d-md-none">
                 <div class="col-md-3 mx-auto text-center">
                     <a><i class="fab fa-facebook-square"></i></a>

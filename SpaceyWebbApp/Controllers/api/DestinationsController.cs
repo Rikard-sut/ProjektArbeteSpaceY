@@ -10,7 +10,6 @@ using SpaceyWebbApp.Models;
 
 namespace SpaceyWebbApp.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     public class DestinationsController : Controller
     {
