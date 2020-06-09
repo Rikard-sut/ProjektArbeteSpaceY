@@ -17,7 +17,7 @@
                     <a id="navbar-logo-text" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SPACEY</a>
                 </div>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" id="navbar-dropdown">
-                    <a href="/login">Login</a>
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
@@ -26,7 +26,6 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-        <partial name="_LoginPartial" />
     </div>
 
     <footer class="fixed-bottom">
