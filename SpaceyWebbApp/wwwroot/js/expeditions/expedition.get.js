@@ -10,11 +10,32 @@
 
 function populateTable(expeditions) {
     for (const expedition of expeditions) {
-        let departure = expedition.departure;
-        departure = departure.replace('T', ' ');
+        let departureTime = expedition.departure
+        departureTime = departureTime.replace('T', ' ')
         const bookedSeats = expedition.customers.length
-        var markup = "<tr class='table-row' data-href='/admin/expedition/?id=" + expedition.expeditionId + "'><td>" + departure + "</td><td>" + expedition.destination.name + "</td><td>" + expedition.rocket.name + "</td><td>" + bookedSeats + "/" + expedition.rocket.seats + "</td> </tr> ";
-        $('.table').append(markup)
+
+        const tableRow = document.createElement('tr')
+        tableRow.className = 'table-row'
+        tableRow.setAttribute('data-href', '/admin/expedition/?id=' + expedition.expeditionId)
+
+        const departure = document.createElement('td')
+        departure.innerText = departureTime
+
+        const destination = document.createElement('td')
+        destination.innerText = expedition.destination.name
+
+        const rocket = document.createElement('td')
+        rocket.innerText = expedition.rocket.name
+
+        const seats = document.createElement('td')
+        seats.innerText = bookedSeats + "/" + expedition.rocket.seats
+
+        tableRow.append(departure)
+        tableRow.append(destination)
+        tableRow.append(rocket)
+        tableRow.append(seats)
+
+        $('.table').append(tableRow)
     }
     addListener();
 }

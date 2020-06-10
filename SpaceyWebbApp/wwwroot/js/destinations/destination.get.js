@@ -10,7 +10,16 @@
 
 function populateTable(destinations) {
     for (const destination of destinations) {
-        var markup = "<tr><td>" + destination.name + "</td><td>" + destination.expeditionRange + "</td></tr>";
-        $('.table').append(markup)
+        const tableRow = document.createElement('tr')
+        const name = document.createElement('td')
+        const range = document.createElement('td')
+
+        name.innerText = destination.name
+        range.innerText = destination.expeditionRange
+
+        tableRow.append(name)
+        tableRow.append(range)
+
+        $('.table').append(tableRow)
     }
 }

@@ -27,7 +27,7 @@ function populateCustomerTable(customers) {
 
         tableRow.append(fullName)
         tableRow.append(seatNumber)
-        //var markup = "<tr><td>" + customer.fullName + "</td><td>" + customer.seatNumber + "</td></tr>";
+
         $('.table').append(tableRow)
     }
 }
