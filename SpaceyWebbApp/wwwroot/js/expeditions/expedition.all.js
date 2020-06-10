@@ -1,11 +1,7 @@
-﻿$(function () {
-    var jqxhr = $.get('/api/expeditions')
-        .done(() => {
-            populateTable(jqxhr.responseJSON)
-        })
-        .fail(() => {
-
-        })
+﻿$(async function () {
+    let expedition = await getExpedition()
+    populateTable(expedition)
+    addSorting()
 })
 
 function populateTable(expeditions) {
@@ -36,16 +32,9 @@ function populateTable(expeditions) {
         tableRow.append(seats)
 
         $('.table').append(tableRow)
-    }
-    addListener();
-}
 
-function addListener() {
-    const rows = document.querySelectorAll('.table-row')
-    for (const row of rows) {
-        row.addEventListener('click', () => {
-            window.document.location = row.getAttribute("data-href")
+        tableRow.addEventListener('click', () => {
+            window.document.location = tableRow.getAttribute("data-href")
         })
     }
 }
-

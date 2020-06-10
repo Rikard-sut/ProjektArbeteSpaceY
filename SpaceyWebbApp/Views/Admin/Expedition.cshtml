@@ -23,6 +23,7 @@
         </table>
         <button id="deleteButton" class="btn btn-danger">Delete Expedition</button>
         @section Scripts {
+            <script src="~/js/expeditions/expedition.js"></script>
             <script src="~/js/expeditions/expedition.details.js"></script>
             @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
         }

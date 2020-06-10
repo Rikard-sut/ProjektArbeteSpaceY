@@ -1,20 +1,9 @@
-﻿function getParam() {
-    var url_string = window.location.href;
-    var url = new URL(url_string);
-    var c = url.searchParams.get("id");
-    return c;
-}
-
-$(function () {
-    var jqxhr = $.get('/api/expeditions/' + getParam())
-        .done(() => {
-            populateDetails(jqxhr.responseJSON)
-            populateCustomerTable(jqxhr.responseJSON.customers)
-            addSorting()
-        })
-        .fail(() => {
-
-        })
+﻿const expeditionId = getParam()
+$(async function () {
+    let expedition = await getExpedition(expeditionId)
+    populateDetails(expedition)
+    populateCustomerTable(expedition.customers)
+    addSorting()
 })
 
 function populateCustomerTable(customers) {
@@ -43,19 +32,10 @@ function populateDetails(details) {
 
 const deleteButton = document.querySelector("#deleteButton")
 deleteButton.addEventListener('click', () => {
-    $.ajax({
-        url: '/api/expeditions/' + getParam(),
-        method: 'DELETE'
-    })
-        .done(() => {
-            window.location = '/admin'
-        })
-        .fail(() => {
-            console.log('fail')
-        })
+    if (deleteExpedition(expeditionId)) {
+        window.location = '/admin'
+    }
+    else {
+        //Show error
+    }
 })
-
-function addSorting() {
-    $('.table').DataTable({});
-    $('.dataTables_length').addClass('bs-select');
-}
