@@ -10,8 +10,8 @@ using SpaceyWebbApp.Models;
 namespace SpaceyWebbApp.Migrations
 {
     [DbContext(typeof(SpaceyDbContext))]
-    [Migration("20200608115342_first1")]
-    partial class first1
+    [Migration("20200609121133_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -109,24 +109,6 @@ namespace SpaceyWebbApp.Migrations
                     b.HasKey("RocketId");
 
                     b.ToTable("Rockets");
-                });
-
-            modelBuilder.Entity("SpaceyWebbApp.Models.User", b =>
-                {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UserId");
-
-                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("SpaceyWebbApp.Models.Customer", b =>

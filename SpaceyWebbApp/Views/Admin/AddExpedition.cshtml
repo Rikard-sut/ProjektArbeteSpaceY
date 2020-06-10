@@ -4,37 +4,41 @@
     ViewData["Title"] = "Add expedition";
 }
 
-<h1>Add expedition</h1>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form id="form" method="post">
-            <!--<div asp-validation-summary="ModelOnly" class="text-danger"></div>-->
-            <div class="form-group">
-                <label asp-for="Departure" class="control-label">Dep</label>
-                <input asp-for="Departure" type="datetime-local" name="departure" class="form-control" required />
-                <span asp-validation-for="Departure" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label for="rocketId" class="control-label">Rocket</label>
-                <select name="rocketId" class="form-control" id="rocketSelect">
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="destinationId" class="control-label">Dest</label>
-                <select name="destinationId" class="form-control" id="destinationSelect">
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-                <a asp-action="Index" class="btn btn-primary">Back to List</a>
-            </div>
-        </form>
-    </div>
-</div>
-<p id="message"></p>
+    <body id="background-image">
 
-@section Scripts {
-    <script src="~/js/expeditions/expedition.post.js"></script>
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+        <h1>Add expedition</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form id="form" method="post">
+                    <!--<div asp-validation-summary="ModelOnly" class="text-danger"></div>-->
+                    <div class="form-group">
+                        <label asp-for="Departure" class="control-label">Dep</label>
+                        <input asp-for="Departure" type="datetime-local" name="departure" class="form-control" required />
+                        <span asp-validation-for="Departure" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="rocketId" class="control-label">Rocket</label>
+                        <select name="rocketId" class="form-control" id="rocketSelect">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="destinationId" class="control-label">Dest</label>
+                        <select name="destinationId" class="form-control" id="destinationSelect">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                        <a asp-action="Index" class="btn btn-primary">Back to List</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <p id="message"></p>
+
+        @section Scripts {
+            <script src="~/js/expeditions/expedition.post.js"></script>
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
+
+        </body>

@@ -5,6 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\**" />
+    <Content Remove="Migrations\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="Migrations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Migrations\20200609121133_initial.cs" />
+    <Compile Include="Migrations\20200609121133_initial.Designer.cs" />
+    <Compile Include="Migrations\SpaceyDbContextModelSnapshot.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\js\destinations\destination.js" />
     <None Include="wwwroot\js\expeditions\expedition.get.js" />
     <None Include="wwwroot\js\expeditions\expedition.js" />

@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -9,14 +14,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/719b82a84d.js" crossorigin="anonymous"></script>
 </head>
-<body id="background-image">
+<body class="layout-body">
     <header>
-        <nav id="header-field" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
-            <div class="navbar-container">
-                <div id="navbar-logo">
-                    <a id="navbar-logo-text" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SPACEY</a>
-                </div>
-            </div>
+        <nav id="header-field" class="navbar navbar-collapse navbar-expand-lg navbar-light ">
+            @if (!SignInManager.IsSignedIn(User))
+            {
+                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index"><h2>SPACEY</h2></a>
+                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Book Now</a>
+                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Rockets</a>
+                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Destinations</a>
+                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">About</a>
+            }
+            else
+            {
+                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index"><h2>SPACEY</h2></a>
+            }
         </nav>
     </header>
     <div class="container">
@@ -24,7 +36,7 @@
             @RenderBody()
         </main>
     </div>
-    <div class="fixed-top d-sm-inline-flex flex-sm-row-reverse"><partial name="_LoginPartial" /></div>
+    <div class="topcorner"><partial name="_LoginPartial" /></div>
 
     <footer class="fixed-bottom">
         <div class="container ">

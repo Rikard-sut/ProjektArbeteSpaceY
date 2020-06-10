@@ -60,41 +60,11 @@ button.accept-policy {
     line-height: inherit;
 }
 
-#background-image {
-    background-image: url('../img/background.png');
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 #header-field {
     background-color: transparent;
 }
 
-.navbar-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    background-color: transparent;
-}
 
-#navbar-logo {
-    text-align: center;
-    grid-column: 2;
-}
-
-#navbar-logo-text {
-    font-size: 2em;
-    color: white;
-}
-
-#navbar-dropdown {
-    text-align: right;
-    grid-column: 3;
-    color: white;
-    font-size: 1.5em;
-}
 
 table {
     color: black;
@@ -107,4 +77,32 @@ table {
 
 footer > div {
     height:inherit;
+}
+
+#home-index {
+    background-image: url('../img/rocket-img.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.layout-body {
+    background-color: black;
+    z-index: -100;
+}
+
+#background-image {
+    background-image: url('../img/background.png');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.topcorner {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline;
 }

@@ -3,25 +3,28 @@
     ViewData["Title"] = "Expeditions";
 }
 
-<h1>Expedition details</h1>
-<h6 id="departure">Departure:</h6>
-<h6 id="rocket">Rocket:</h6>
-<h6 id="destination">Destination:</h6>
-<hr />
-<h2>Bookings</h2>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Seat</th>
-        </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
-<button id="deleteButton" class="btn btn-danger">Delete Expedition</button>
-@section Scripts {
-    <script src="~/js/expeditions/expedition.details.js"></script>
-    <script src="~/js/expeditions/expedition.js"></script>
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    <body id="background-image">
+
+        <h1>Expedition details</h1>
+        <h6 id="departure">Departure:</h6>
+        <h6 id="rocket">Rocket:</h6>
+        <h6 id="destination">Destination:</h6>
+        <hr />
+        <h2>Bookings</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Seat</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <button id="deleteButton" class="btn btn-danger">Delete Expedition</button>
+        @section Scripts {
+            <script src="~/js/expeditions/expedition.details.js"></script>
+            <script src="~/js/expeditions/expedition.js"></script>
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
+    </body>
