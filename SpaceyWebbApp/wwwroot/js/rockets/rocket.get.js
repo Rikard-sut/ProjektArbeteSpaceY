@@ -10,7 +10,19 @@
 
 function populateTable(rockets) {
     for (const rocket of rockets) {
-        var markup = "<tr><td>" + rocket.name + "</td><td>" + rocket.range + "</td><td>" + rocket.seats + "</td></tr>";
-        $('.table').append(markup)
+        const tableRow = document.createElement('tr')
+        const name = document.createElement('td')
+        const range = document.createElement('td')
+        const seats = document.createElement('td')
+
+        name.innerText = rocket.name
+        range.innerText = rocket.range
+        seats.innerText = rocket.seats
+
+        tableRow.append(name)
+        tableRow.append(range)
+        tableRow.append(seats)
+
+        $('.table').append(tableRow)
     }
 }
