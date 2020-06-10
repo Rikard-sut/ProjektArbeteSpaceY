@@ -75,6 +75,10 @@ table {
     cursor: pointer;
 }
 
+.table-row:hover {
+    background-color: #eaeaea;
+}
+
 footer > div {
     height:inherit;
 }

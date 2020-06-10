@@ -10,6 +10,7 @@
         }
         catch (error) {
             console.error(error)
+            return false
         } 
     }
     //Request all expeditions
@@ -23,6 +24,7 @@
         }
         catch (error) {
             console.error(error)
+            return false
         } 
     }    
 }
@@ -38,6 +40,7 @@ async function deleteExpedition(id) {
         }
         catch (error) {
             console.error(error)
+            return false
         }
     }
     //Request all expeditions

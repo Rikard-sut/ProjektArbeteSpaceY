@@ -21,7 +21,6 @@
     <None Include="wwwroot\js\destinations\destination.js" />
     <None Include="wwwroot\js\expeditions\expedition.js" />
     <None Include="wwwroot\js\expeditions\expedition.post.js" />
-    <None Include="wwwroot\js\rockets\rocket.get.js" />
     <None Include="wwwroot\js\rockets\rocket.js" />
     <None Include="wwwroot\js\rockets\rocket.post.js" />
     <None Include="wwwroot\js\site.js" />

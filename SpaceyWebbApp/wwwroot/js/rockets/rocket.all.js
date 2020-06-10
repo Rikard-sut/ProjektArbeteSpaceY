@@ -1,11 +1,7 @@
-﻿$(function () {
-    var jqxhr = $.get('/api/rockets')
-        .done(() => {
-            populateTable(jqxhr.responseJSON)
-        })
-        .fail(() => {
-
-        })
+﻿$(async function () {
+    let rockets = await getRockets()
+    populateTable(rockets)
+    addSorting()
 })
 
 function populateTable(rockets) {
