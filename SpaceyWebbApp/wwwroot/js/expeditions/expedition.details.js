@@ -10,6 +10,7 @@ $(function () {
         .done(() => {
             populateDetails(jqxhr.responseJSON)
             populateCustomerTable(jqxhr.responseJSON.customers)
+            addSorting()
         })
         .fail(() => {
 
@@ -47,15 +48,14 @@ deleteButton.addEventListener('click', () => {
         method: 'DELETE'
     })
         .done(() => {
-            console.log('deleted')
+            window.location = '/admin'
         })
         .fail(() => {
             console.log('fail')
         })
 })
 
-
-$(document).ajaxComplete(function () {
+function addSorting() {
     $('.table').DataTable({});
     $('.dataTables_length').addClass('bs-select');
-});
+}
