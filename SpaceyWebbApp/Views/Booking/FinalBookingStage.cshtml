@@ -1,13 +1,14 @@
-﻿@model IEnumerable<string>
+﻿@model SpaceyWebbApp.ViewModels.BookingViewModel
 @{
     ViewData["Title"] = "FinalBookingStage";
 }
     
 <body id="home-index">
         <h1>FinalBookingStage</h1>
-        @foreach (var seat in Model)
+        @foreach (var seat in Model.SeatsToBook)
         {
             <input placeholder="Rikard Skoglund" /> <p>for seat @seat</p>
         }
+    <h1>OUR EXPEDITION ID TO BOOK ON IS @Model.ExpeditionId</h1>
 </body>
 

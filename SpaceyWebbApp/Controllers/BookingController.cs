@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SpaceyWebbApp.Models;
+using SpaceyWebbApp.ViewModels;
 
 namespace SpaceyWebbApp.Controllers
 {
@@ -21,10 +22,8 @@ namespace SpaceyWebbApp.Controllers
         [HttpPost]
         public ActionResult SubmitCheckboxes(string[] seats, string expeditionId)
         {
-            // tags is an array of the selected checkbox values for you to process
-
-            // return them to the Index view for display
-            return View("FinalBookingstage", seats); //HÄR SKA VI RETURNERA EN VIEW DÄR MAN MÅSTE SKRIVA IN NAMN FÖR VARJE PLATS.
+            var bookingView = new BookingViewModel(seats, expeditionId);
+            return View("FinalBookingstage", bookingView); //HÄR SKA VI RETURNERA EN VIEW DÄR MAN MÅSTE SKRIVA IN NAMN FÖR VARJE PLATS.
         }
 
     }

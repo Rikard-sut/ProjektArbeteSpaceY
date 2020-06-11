@@ -16,12 +16,13 @@ function populateDetails(details) {
 
 function populateSeats(expedition) {
     const list = document.querySelector('.cabin')
+    const expeditionIdInput = document.createElement('input')
+    expeditionIdInput.value = expeditionId
+    expeditionIdInput.name = 'expeditionId'
+    expeditionIdInput.hidden = true
+    list.append(expeditionIdInput)
     for (let i = 1; i <= expedition.rocket.seats; i++) {
         const li = document.createElement('li')
-
-        const expeditionIdInput = document.createElement('input')
-        expeditionIdInput.hidden = true
-        expeditionIdInput.value = expeditionId
 
         const input = document.createElement('input')
         input.id = i
