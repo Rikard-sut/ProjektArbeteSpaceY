@@ -19,7 +19,7 @@ namespace SpaceyWebbApp.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SubmitCheckboxes(string[] seats, string expeditionId)
+        public ActionResult SubmitCheckboxes(string[] seats)
         {
             // tags is an array of the selected checkbox values for you to process
 
