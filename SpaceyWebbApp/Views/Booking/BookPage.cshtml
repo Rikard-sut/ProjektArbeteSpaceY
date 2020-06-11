@@ -10,19 +10,15 @@
     <h6 id="rocket">Rocket:</h6>
     <h6 id="destination">Destination:</h6>
     <hr />
-    <h2>Bookings</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Seat</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
 
-    <h1>HÄR SKA DE VA EN GRAFISK VY AV BOKADE PLATSER ISTÄLLER FÖR TABLE UEHEHEUEHEU</h1>
+    <div class="plane">
+        <div class="cockpit">
+            <h1>Please select a seat</h1>
+        </div>
+        <ul class="cabin fuselage">
+            
+        </ul>
+    </div>
 
     <form asp-action="BookPage">
         <div class="form-group">
@@ -31,7 +27,7 @@
     </form>
     @section Scripts {
         <script src="~/js/expeditions/expedition.js"></script>
-        <script src="~/js/Booking/Booking.details.js"></script>
+        <script src="~/js/Booking/booking.details.js"></script>
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     }
 </body>

@@ -2,25 +2,9 @@
 $(async function () {
     let expedition = await getExpedition(expeditionId)
     populateDetails(expedition)
-    populateCustomerTable(expedition.customers)
+    populateSeats(expedition)
     addSorting()
 })
-
-function populateCustomerTable(customers) {
-    for (const customer of customers) {
-        const tableRow = document.createElement('tr')
-        const fullName = document.createElement('td')
-        const seatNumber = document.createElement('td')
-
-        fullName.innerText = customer.fullName
-        seatNumber.innerText = customer.seatNumber
-
-        tableRow.append(fullName)
-        tableRow.append(seatNumber)
-
-        $('.table').append(tableRow)
-    }
-}
 
 function populateDetails(details) {
     let departure = details.departure;
@@ -28,4 +12,25 @@ function populateDetails(details) {
     document.querySelector('#departure').innerText = 'Departure: ' + departure;
     document.querySelector('#rocket').innerText = 'Rocket: ' + details.rocket.name;
     document.querySelector('#destination').innerText = 'Destination: ' + details.destination.name;
+}
+
+function populateSeats(expedition) {
+    const list = document.querySelector('.cabin')
+    for (let i = 1; i <= expedition.rocket.seats; i++) {
+        const li = document.createElement('li')
+
+        const input = document.createElement('input')
+        input.id = i
+        input.type = 'checkbox'
+        input.value = i
+
+        const label = document.createElement('label')
+        label.className = 'seat'
+        label.htmlFor = i
+        label.innerText = i
+
+        li.append(input)
+        li.append(label)
+        list.append(li)
+    }
 }

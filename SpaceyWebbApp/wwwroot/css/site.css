@@ -110,3 +110,41 @@ footer > div {
     right: 10px;
     display: inline;
 }
+
+.cabin {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+}
+
+.cabin > li {
+    list-style-type: none;
+}
+
+.cabin input[type=checkbox] {
+    opacity: 0;
+}
+    .cabin input[type=checkbox]:checked + label {
+        background-color: #1b6ec2;
+    }
+
+.seat {
+    width: 50%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5rem;
+    padding: 4px 0;
+    background: #41B3A3;
+    border-radius: 5px;
+    animation-duration: 300ms;
+    animation-fill-mode: both;
+    cursor: pointer;
+}
+
+.booked {
+    background-color: #e27D60;
+}
+
+.seat:hover {
+    background: #399f90;
+}
