@@ -20,7 +20,7 @@ namespace SpaceyWebbApp.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SubmitCheckboxes(string[] seats)
+        public ActionResult SubmitCheckboxes(string[] seats, string expeditionId)
         {
             var bookingView = new BookingViewModel(seats, expeditionId);
             return View("FinalBookingstage", bookingView); //HÄR SKA VI RETURNERA EN VIEW DÄR MAN MÅSTE SKRIVA IN NAMN FÖR VARJE PLATS.
