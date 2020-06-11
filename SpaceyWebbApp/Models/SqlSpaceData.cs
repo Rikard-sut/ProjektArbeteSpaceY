@@ -110,6 +110,21 @@ namespace SpaceyWebbApp.Models
             db.SaveChanges();
             return expedition;
         }
+        /// <summary>
+        /// ??????????????? FIXA DENNA
+        /// </summary>
+        /// <param name="expedition"></param>
+        public void BookSeats(Expedition expedition)
+        {
+            Expedition expeditionToUpdate = (from e in db.Expeditions
+                                   where e.ExpeditionId == expedition.ExpeditionId
+                                   select e).FirstOrDefault();
+            foreach(var customer in expedition.Customers)
+            {
+                expeditionToUpdate.Customers.Add(customer);
+            }
+            db.SaveChanges();
+        }
         #endregion Expedition
     }
 }

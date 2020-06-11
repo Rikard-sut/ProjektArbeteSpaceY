@@ -1,0 +1,39 @@
+﻿@model SpaceyWebbApp.Models.Expedition
+@{
+    ViewData["Title"] = "BookPage";
+}
+<body id="home-index">
+
+
+    <h1>Book Seats</h1>
+    <h6 id="departure">Departure:</h6>
+    <h6 id="rocket">Rocket:</h6>
+    <h6 id="destination">Destination:</h6>
+    <hr />
+    <h2>Bookings</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Seat</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <h1>HÄR SKA DE VA EN GRAFISK VY AV BOKADE PLATSER ISTÄLLER FÖR TABLE UEHEHEUEHEU</h1>
+
+    <form asp-action="BookPage">
+        <div class="form-group">
+            <input type="submit" value="Confirm Order" class="btn btn-primary" />
+        </div>
+    </form>
+    @section Scripts {
+        <script src="~/js/expeditions/expedition.js"></script>
+        <script src="~/js/Booking/Booking.details.js"></script>
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
+
+
