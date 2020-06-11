@@ -19,11 +19,16 @@ function populateSeats(expedition) {
     for (let i = 1; i <= expedition.rocket.seats; i++) {
         const li = document.createElement('li')
 
+        const expeditionIdInput = document.createElement('input')
+        expeditionIdInput.hidden = true
+        expeditionIdInput.value = expeditionId
+
         const input = document.createElement('input')
         input.id = i
         input.type = 'checkbox'
         input.value = i
         input.name = 'seats'
+
         const label = document.createElement('label')
         label.className = 'seat'
         label.htmlFor = i
