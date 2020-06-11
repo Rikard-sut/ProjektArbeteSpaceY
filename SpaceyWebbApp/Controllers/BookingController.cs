@@ -18,6 +18,14 @@ namespace SpaceyWebbApp.Controllers
         {
             return View();
         }
-       
+        [HttpPost]
+        public ActionResult SubmitCheckboxes(string[] seats, string expeditionId)
+        {
+            // tags is an array of the selected checkbox values for you to process
+
+            // return them to the Index view for display
+            return View("FinalBookingstage", seats); //HÄR SKA VI RETURNERA EN VIEW DÄR MAN MÅSTE SKRIVA IN NAMN FÖR VARJE PLATS.
+        }
+
     }
 }

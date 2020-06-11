@@ -1,4 +1,4 @@
-﻿@model SpaceyWebbApp.Models.Expedition
+﻿@model IEnumerable<string>
 @{
     ViewData["Title"] = "BookPage";
 }
@@ -15,16 +15,15 @@
         <div class="cockpit">
             <h1>Please select a seat</h1>
         </div>
-        <ul class="cabin fuselage">
-            
-        </ul>
+
+        @using (Html.BeginForm(new { action = "SubmitCheckBoxes" }))
+        {
+            <ul class="cabin fuselage">
+            </ul>
+            <input type="submit" value="Select seats" />
+        }
     </div>
 
-    <form asp-action="BookPage">
-        <div class="form-group">
-            <input type="submit" value="Confirm Order" class="btn btn-primary" />
-        </div>
-    </form>
     @section Scripts {
         <script src="~/js/expeditions/expedition.js"></script>
         <script src="~/js/Booking/booking.details.js"></script>

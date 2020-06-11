@@ -23,7 +23,7 @@ function populateSeats(expedition) {
         input.id = i
         input.type = 'checkbox'
         input.value = i
-
+        input.name = 'seats'
         const label = document.createElement('label')
         label.className = 'seat'
         label.htmlFor = i
