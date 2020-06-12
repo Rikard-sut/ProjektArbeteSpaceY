@@ -20,20 +20,20 @@ function populateSeats(expedition) {
     expeditionIdInput.value = expeditionId
     expeditionIdInput.name = 'expeditionId'
     expeditionIdInput.hidden = true
-
     list.append(expeditionIdInput)
+
     for (let i = 1; i <= expedition.rocket.seats; i++) {
         const li = document.createElement('li')
 
         const input = document.createElement('input')
-        input.id = i
+        input.id = 's' + i
         input.type = 'checkbox'
         input.value = i
         input.name = 'seats'
 
         const label = document.createElement('label')
         label.className = 'seat'
-        label.htmlFor = i
+        label.htmlFor = 's' + i
         label.innerText = i
 
         li.append(input)
@@ -41,6 +41,7 @@ function populateSeats(expedition) {
         list.append(li)
     }
     for (customer of expedition.customers) {
-        document.querySelector('#' + customer.seat).disabled = true
+        document.querySelector('#s' + customer.seatNumber).disabled = true
+        document.querySelector('label[for="s' + customer.seatNumber + '"]').classList.toggle('booked')
     }
 }

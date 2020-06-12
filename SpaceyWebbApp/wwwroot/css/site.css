@@ -142,9 +142,14 @@ footer > div {
 }
 
 .booked {
+    cursor: default;
     background-color: #e27D60;
 }
 
 .seat:hover {
     background: #399f90;
+}
+
+.booked:hover {
+    background-color: #e27D60;
 }
