@@ -39,4 +39,7 @@ function populateSeats(expedition) {
         li.append(label)
         list.append(li)
     }
+    for (customer of expedition.customers) {
+        document.querySelector('#' + customer.seat).disabled = true
+    }
 }
