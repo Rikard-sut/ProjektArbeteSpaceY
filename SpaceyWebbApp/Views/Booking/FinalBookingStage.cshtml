@@ -2,13 +2,27 @@
 @{
     ViewData["Title"] = "FinalBookingStage";
 }
-    
+
 <body id="home-index">
-        <h1>FinalBookingStage</h1>
-        @foreach (var seat in Model.SeatsToBook)
+    <h1>FinalBookingStage</h1>
+    <form asp-action="FinalBookingStage">
+        @for(int i = 0; i<Model.SeatsToBook.Length; i++)
         {
-            <input placeholder="Rikard Skoglund" /> <p>for seat @seat</p>
+            <div>
+                <input asp-for="Customers[i].SeatNumber" value="@Model.SeatsToBook[i]" hidden />
+            </div>
+            <div>
+                <input asp-for="Customers[i].ExpeditionId" value="@Model.Expedition.ExpeditionId" hidden />
+            </div>
+            <div class="form-group">
+                <label asp-for="Customers[i].FullName">Full name</label>
+                <input asp-for="Customers[i].FullName" placeholder="Rikard Skoglund" /> <p>for seat @Model.SeatsToBook[i]</p>
+            </div>
         }
-    <h1>OUR EXPEDITION ID TO BOOK ON IS @Model.ExpeditionId</h1>
+        <div class="form-group">
+            <input type="submit" value="Confirm Booking!" class="btn btn-primary" />
+        </div>
+    </form>
+    <h1>OUR EXPEDITION ID TO BOOK ON IS @Model.Expedition.ExpeditionId</h1>
 </body>
 

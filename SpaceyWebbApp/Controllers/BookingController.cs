@@ -10,7 +10,11 @@ namespace SpaceyWebbApp.Controllers
 {
     public class BookingController : Controller
     {
-       
+        private readonly SqlSpaceData _sqlService;
+        public BookingController(SqlSpaceData sqlSpaceData)
+        {
+            this._sqlService = sqlSpaceData;
+        }
         public IActionResult Index()
         {
             return View();
@@ -22,8 +26,15 @@ namespace SpaceyWebbApp.Controllers
         [HttpPost]
         public ActionResult SubmitCheckboxes(string[] seats, string expeditionId)
         {
-            var bookingView = new BookingViewModel(seats, expeditionId);
+            var expedition = _sqlService.GetExpeditionById(Convert.ToInt32(expeditionId));
+            var bookingView = new BookingViewModel(seats, expedition);
             return View("FinalBookingstage", bookingView); //HÄR SKA VI RETURNERA EN VIEW DÄR MAN MÅSTE SKRIVA IN NAMN FÖR VARJE PLATS.
+        }
+        [HttpPost]
+        public ActionResult FinalBookingstage(BookingViewModel bookingInfo)
+        {
+            _sqlService.AddCustomers(bookingInfo.Customers);
+            return View("BookingConfirmation", bookingInfo); //Redirecta TILL CONFIRMATION här annars fet crash.
         }
 
     }
