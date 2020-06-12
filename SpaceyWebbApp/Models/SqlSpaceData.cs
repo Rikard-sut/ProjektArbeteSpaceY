@@ -126,5 +126,16 @@ namespace SpaceyWebbApp.Models
             db.SaveChanges();
         }
         #endregion Expedition
+        #region Booking
+        public void AddCustomers(List<Customer> customers)
+        {
+            foreach(var customer in customers)
+            {
+                db.Customers.Add(customer);
+            }
+            db.SaveChanges();
+        }
+
+        #endregion
     }
 }

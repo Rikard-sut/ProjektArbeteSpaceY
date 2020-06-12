@@ -20,6 +20,7 @@ function populateSeats(expedition) {
     expeditionIdInput.value = expeditionId
     expeditionIdInput.name = 'expeditionId'
     expeditionIdInput.hidden = true
+
     list.append(expeditionIdInput)
     for (let i = 1; i <= expedition.rocket.seats; i++) {
         const li = document.createElement('li')

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpaceyWebbApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,13 +8,18 @@ namespace SpaceyWebbApp.ViewModels
 {
     public class BookingViewModel
     {
-        public string[] SeatsToBook { get; set; }
-        public string ExpeditionId { get; set; }
+        public int[] SeatsToBook { get; set; }
+        public Expedition Expedition { get; set; }
+        public List<Customer> Customers{ get; set; }
 
-        public BookingViewModel(string[] seats, string expeditionId)
+        public BookingViewModel(string[] seats, Expedition expedition)
         {
-            this.ExpeditionId = expeditionId;
-            this.SeatsToBook = seats;
+            this.Expedition = expedition;
+            this.SeatsToBook = seats.Select(int.Parse).ToArray();
+        }
+        public BookingViewModel()
+        {
+
         }
     }
 }
