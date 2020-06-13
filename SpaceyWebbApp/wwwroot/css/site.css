@@ -91,6 +91,22 @@ footer > div {
     background-size: cover;
 }
 
+#booking-index {
+    background-image: url('../img/rocket_horizontal.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#booking-confir-index {
+    background-image: url('../img/rocket_launch.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .layout-body {
     background-color: black;
     z-index: -100;
@@ -113,7 +129,7 @@ footer > div {
 
 .cabin {
     display: grid;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(10,1fr);
 }
 
 .cabin > li {
@@ -128,7 +144,7 @@ footer > div {
     }
 
 .seat {
-    width: 50%;
+    width: 80%;
     text-align: center;
     font-size: 14px;
     font-weight: bold;

@@ -16,19 +16,28 @@
 </head>
 <body class="layout-body">
     <header>
-        <nav id="header-field" class="navbar navbar-collapse navbar-expand-lg navbar-light ">
-            @if (!SignInManager.IsSignedIn(User))
-            {
-                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index"><h2>SPACEY</h2></a>
-                <a class="nav-link text-white" asp-area="" asp-controller="Booking" asp-action="Index">Book Now</a>
-                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Rockets</a>
-                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Destinations</a>
-                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">About</a>
-            }
-            else
-            {
-                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index"><h2>SPACEY</h2></a>
-            }
+        <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">SPACEY</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="position: relative">
+                    <ul class="navbar-nav mr-auto" style="position:fixed;">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Booking" asp-action="Index">Book Now</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Our Rockets</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Our Destinations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">About us</a>
+                        </li>
+                    </ul>
+                </div>
         </nav>
     </header>
     <div class="container">
@@ -38,19 +47,7 @@
     </div>
     <div class="topcorner"><partial name="_LoginPartial" /></div>
 
-    <footer class="fixed-bottom">
-        <div class="container ">
-            <div class="row">
-                <div class="col-md-3 mx-auto text-center" id="copy-right">&copy; 2020</div>
-                <hr class="clearfix w-100 d-md-none">
-                <hr class="clearfix w-100 d-md-none">
-                <div class="col-md-3 mx-auto text-center">
-                    <a><i class="fab fa-facebook-square"></i></a>
-                    <a><i class="fab fa-instagram-square"></i></a>
-                    <a><i class="fab fa-twitter-square"></i></a>
-                </div>
-            </div>
-        </div>
+    <footer>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
