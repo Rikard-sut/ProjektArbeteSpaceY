@@ -4,24 +4,25 @@
 }
 <body id="booking-index">
 
+    <div class="bg-dark">
+        <h1>Book Seats</h1>
+        <h6 id="departure">Departure:</h6>
+        <h6 id="rocket">Rocket:</h6>
+        <h6 id="destination">Destination:</h6>
+        <hr />
 
-    <h1>Book Seats</h1>
-    <h6 id="departure">Departure:</h6>
-    <h6 id="rocket">Rocket:</h6>
-    <h6 id="destination">Destination:</h6>
-    <hr />
+        <div class="plane">
+            <div class="cockpit">
+                <h1>Please select a seat</h1>
+            </div>
 
-    <div class="plane">
-        <div class="cockpit">
-            <h1>Please select a seat</h1>
+            @using (Html.BeginForm(new { action = "SubmitCheckBoxes" }))
+            {
+                <ul class="cabin fuselage">
+                </ul>
+                <input type="submit" value="Select seats" />
+            }
         </div>
-
-        @using (Html.BeginForm(new { action = "SubmitCheckBoxes" }))
-        {
-            <ul class="cabin fuselage">
-            </ul>
-            <input type="submit" value="Select seats" />
-        }
     </div>
 
     @section Scripts {

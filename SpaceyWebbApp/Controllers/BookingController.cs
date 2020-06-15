@@ -28,7 +28,7 @@ namespace SpaceyWebbApp.Controllers
         {
             var expedition = _sqlService.GetExpeditionById(Convert.ToInt32(expeditionId));
             var bookingView = new BookingViewModel(seats, expedition);
-            return View("FinalBookingstage", bookingView); //HÄR SKA VI RETURNERA EN VIEW DÄR MAN MÅSTE SKRIVA IN NAMN FÖR VARJE PLATS.
+            return View("FinalBookingstage", bookingView); //HÄR SKA VI RETURNERA EN VIEW DÄR MAN MÅSTE SKRIVA IN NAMN FÖR VARJE PLATS   
         }
         [HttpPost]
         public ActionResult FinalBookingstage(BookingViewModel bookingInfo)

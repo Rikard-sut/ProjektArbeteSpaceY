@@ -4,6 +4,9 @@ $(async function () {
     populateDetails(expedition)
     populateSeats(expedition)
     addSorting()
+    validateCheckboxes()
+
+
 })
 
 function populateDetails(details) {
@@ -45,3 +48,13 @@ function populateSeats(expedition) {
         document.querySelector('label[for="s' + customer.seatNumber + '"]').classList.toggle('booked')
     }
 }
+function validateCheckboxes() {
+    $("input[type='checkbox']").change(function () {
+        var len = $("input[type='checkbox']:checked").length;
+        if (len == 0)
+            $("input[type='submit']").prop("disabled", true);
+        else
+            $("input[type='submit']").removeAttr("disabled");
+    });
+    $("input[type='checkbox']").trigger('change');
+};

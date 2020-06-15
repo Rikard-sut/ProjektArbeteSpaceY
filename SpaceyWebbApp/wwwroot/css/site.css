@@ -97,6 +97,7 @@ footer > div {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 #booking-confir-index {
@@ -130,6 +131,7 @@ footer > div {
 .cabin {
     display: grid;
     grid-template-columns: repeat(10,1fr);
+    padding: 0;
 }
 
 .cabin > li {
