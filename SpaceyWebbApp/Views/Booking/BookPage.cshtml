@@ -4,23 +4,24 @@
 }
 <body id="booking-index">
 
-    <div class="bg-dark">
-        <h1>Book Seats</h1>
-        <h6 id="departure">Departure:</h6>
-        <h6 id="rocket">Rocket:</h6>
-        <h6 id="destination">Destination:</h6>
+    <div id="seat-background" class="bg-dark w-100">
+        <h2 class="px-4 pt-3">Book Seats</h2>
+        <h6 id="rocket" class="px-4">Rocket:</h6>
+        <h6 id="destination" class="px-4">Destination:</h6>
+        <h6 id="departure" class="px-4">Departure:</h6>
         <hr />
 
         <div class="plane">
             <div class="cockpit">
-                <h1>Please select a seat</h1>
             </div>
 
             @using (Html.BeginForm(new { action = "SubmitCheckBoxes" }))
             {
                 <ul class="cabin fuselage">
                 </ul>
-                <input type="submit" value="Select seats" />
+                <div class="text-right">
+                    <input type="submit" value="Select seats" class="mb-3 mr-4" />
+                </div>
             }
         </div>
     </div>
