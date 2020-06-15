@@ -6,11 +6,11 @@ fetchRockets()
 
 function fetchDestinations() {
     $.get("/api/destinations", function (data) {
-        console.log(data)
         for (const item of data) {
             const option = document.createElement('option')
             option.value = item.destinationId
             option.innerText = item.name
+            option.setAttribute('range', item.expeditionRange)
 
             destinationSelect.append(option)
         }
@@ -19,11 +19,11 @@ function fetchDestinations() {
 
 function fetchRockets() {
     $.get("/api/rockets", function (data) {
-        console.log(data)
         for (const item of data) {
             const option = document.createElement('option')
             option.value = item.rocketId
             option.innerText = item.name
+            option.setAttribute('range', item.range)
 
             rocketSelect.append(option)
         }
@@ -34,11 +34,19 @@ function fetchRockets() {
 const form = document.querySelector('form')
 form.addEventListener('submit', (event) => {
     event.preventDefault()
-    var jqxhr = $.post('/api/expeditions', $('#form').serialize())
-        .done(() => {
-            window.location = '/admin/'
-        })
-        .fail(() => {
+    const rockRange = Number($("#rocketSelect :selected").attr('range'))
+    const destRange = Number($("#destinationSelect :selected").attr('range'))
 
-        })
+    if (rockRange >= destRange) {
+        var jqxhr = $.post('/api/expeditions', $('#form').serialize())
+            .done(() => {
+                window.location = '/admin/'
+            })
+            .fail(() => {
+
+            })
+    }
+    else {
+        alert('Rocket range is to short for this destination.')
+    }
 })
