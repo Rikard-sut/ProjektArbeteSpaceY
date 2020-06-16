@@ -3,13 +3,13 @@
     ViewData["Title"] = "BookingConfirmation";
 }
 <body id="booking-confir-index">
-    <h1>BookingConfirmation</h1>
+    <h1 class="pb-5">Booking Confirmation</h1>
     <div>
         @foreach (var customer in Model.Customers)
         {
-            <p>@customer.FullName bokade plats @customer.SeatNumber</p>
+            <p>@customer.FullName booked seat number: @customer.SeatNumber</p>
         }
-        <p>for expedition to </p>
+        <h3>Thank you for traveling with SPACEY</h3>
     </div>
 </body>
 
