@@ -6,7 +6,7 @@
 <body id="booking-index">
     <h1>FinalBookingStage</h1>
     <form asp-action="FinalBookingStage">
-        @for(int i = 0; i<Model.SeatsToBook.Length; i++)
+        @for (int i = 0; i < Model.SeatsToBook.Length; i++)
         {
             <div>
                 <input asp-for="Customers[i].SeatNumber" value="@Model.SeatsToBook[i]" hidden />
@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Customers[i].FullName">Full name</label>
-                <input asp-for="Customers[i].FullName" placeholder="Rikard Skoglund" /> <p>for seat @Model.SeatsToBook[i]</p>
+                <input asp-for="Customers[i].FullName" placeholder="Rikard Skoglund" required /> <p>for seat @Model.SeatsToBook[i]</p>
             </div>
         }
         <div class="form-group">
