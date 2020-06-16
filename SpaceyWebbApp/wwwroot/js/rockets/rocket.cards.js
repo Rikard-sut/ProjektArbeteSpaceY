@@ -1,10 +1,9 @@
 ﻿$(async function () {
     let rockets = await getRockets()
-    populateTable(rockets)
-    addSorting()
+    populateCards(rockets)
 })
 
-function populateTable(rockets) {
+function populateCards(rockets) {
     for (const rocket of rockets) {
         if (rocket.range == 50) {
             rocket.range = 'Low'
@@ -20,7 +19,7 @@ function populateTable(rockets) {
 
         const img = document.createElement('img')
         img.className = 'card-img-top'
-        img.src = '/img/rocket_launch.jpg'
+        img.src = '/img/background.png'
 
         const cardTitle = document.createElement('h5')
         cardTitle.className = 'card-title'

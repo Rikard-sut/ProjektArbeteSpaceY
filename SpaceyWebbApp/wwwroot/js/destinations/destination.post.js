@@ -2,11 +2,10 @@
 const form = document.querySelector('form')
 form.addEventListener('submit', (event) => {
     event.preventDefault()
-    var jqxhr = $.post('/api/destinations', $('#form').serialize())
-        .done(() => {
-            location.reload()
-        })
-        .fail(() => {
-
-        })
+    if (addDestination($('#form').serialize())) {
+        location.reload()
+    }
+    else {
+        //Display error
+    }
 })

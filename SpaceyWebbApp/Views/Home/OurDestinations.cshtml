@@ -3,12 +3,14 @@
     ViewData["Title"] = "OurDestinations";
 }
 
-<body id="home-index">
-    <h1>OurDestinations</h1>
+    <body id="home-index">
+        <h1>OurDestinations</h1>
 
-    @section Scripts{
-
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
-</body>
+        <div class="cards"></div>
+        @section Scripts{
+            <script src="~/js/destinations/destination.js"></script>
+            <script src="~/js/destinations/destination.cards.js"></script>
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
+    </body>
 

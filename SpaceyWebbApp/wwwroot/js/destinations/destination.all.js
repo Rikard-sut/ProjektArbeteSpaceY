@@ -1,11 +1,7 @@
-﻿$(function () {
-    var jqxhr = $.get('/api/destinations')
-        .done(() => {
-            populateTable(jqxhr.responseJSON)
-        })
-        .fail(() => {
-
-        })
+﻿$(async function () {
+    let destinations = await getDestinations()
+    populateTable(destinations)
+    addSorting()
 })
 
 function populateTable(destinations) {
