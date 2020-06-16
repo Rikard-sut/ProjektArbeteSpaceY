@@ -1,8 +1,8 @@
 ﻿//Post to backend
 const form = document.querySelector('form')
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', async (event) => {
     event.preventDefault()
-    if(addRocket($('#form').serialize())){
+    if(await addRocket($('#form').serialize())){
         location.reload()
     }
     else {
