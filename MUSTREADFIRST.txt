@@ -1,0 +1,19 @@
+Lägg till din connectionstring i appsettings.json, står i kommentar
+hur den skall se ut.
+
+Kör projektet, build eller ctrl+f5. Stäng sedan ner webbläsaren.
+Öppna visual studios packet manager console för projektet och kör nedanstående
+commands.
+
+!!!
+add-migration firstLoginDB -Context SpaceyWebbAppContext
+update-database -Context SpaceyWebbAppContext
+
+add-migration firstRocketsDB -Context SpaceyDbContext
+update-database -Context SpaceyDbContext
+!!!
+
+Kör sedan SqlScriptet som ligger i rootmappen för projektet för att generera
+upp data. Eller Om du vill lägg till egen data via adminfunktionerna på sidan.
+
+nu är det fritt fram å testa sidan.
