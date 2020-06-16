@@ -15,6 +15,7 @@
     <Compile Include="Migrations\20200609121133_initial.cs" />
     <Compile Include="Migrations\20200609121133_initial.Designer.cs" />
     <Compile Include="Migrations\SpaceyDbContextModelSnapshot.cs" />
+    <Compile Include="Migrations\SpaceyWebbApp\SpaceyWebbAppContextModelSnapshot.cs" />
   </ItemGroup>
 
   <ItemGroup>
