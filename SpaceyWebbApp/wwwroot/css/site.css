@@ -64,8 +64,6 @@ button.accept-policy {
     background-color: transparent;
 }
 
-
-
 table {
     color: black;
     background-color: white;
@@ -177,4 +175,16 @@ footer > div {
 #seat-background {
     margin-top: 50px;
     border-radius: 5px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+    color: #282828;
+}
+
+.cards h5 {
+    padding: 0.5em;
+    margin: 0;
 }

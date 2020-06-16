@@ -6,19 +6,44 @@
 
 function populateTable(rockets) {
     for (const rocket of rockets) {
-        const tableRow = document.createElement('tr')
-        const name = document.createElement('td')
-        const range = document.createElement('td')
-        const seats = document.createElement('td')
+        if (rocket.range == 50) {
+            rocket.range = 'Low'
+        }
+        else if (rocket.range == 100) {
+            rocket.range = 'Medium'
+        }
+        else {
+            rocket.range = 'High'
+        }
+        const card = document.createElement('div')
+        card.className = 'card'
 
-        name.innerText = rocket.name
-        range.innerText = rocket.range
-        seats.innerText = rocket.seats
+        const img = document.createElement('img')
+        img.className = 'card-img-top'
+        img.src = '/img/rocket_launch.jpg'
 
-        tableRow.append(name)
-        tableRow.append(range)
-        tableRow.append(seats)
+        const cardTitle = document.createElement('h5')
+        cardTitle.className = 'card-title'
+        cardTitle.innerText = rocket.name
 
-        $('.table').append(tableRow)
+        const cardBody = document.createElement('div')
+        cardBody.className = 'card-body'
+
+        const rangeText = document.createElement('p')
+        rangeText.className = 'card-text'
+        rangeText.innerText = 'Range: ' + rocket.range
+
+        const seatsText = document.createElement('p')
+        seatsText.className = 'card-text'
+        seatsText.innerText = 'Seats: ' + rocket.seats
+
+        cardBody.append(seatsText)
+        cardBody.append(rangeText)
+
+        card.append(img)
+        card.append(cardTitle)
+        card.append(cardBody)
+
+        $('.cards').append(card)
     }
 }

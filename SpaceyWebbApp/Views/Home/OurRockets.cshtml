@@ -5,20 +5,10 @@
     <body id="home-index">
         <h1>OurRockets</h1>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Range</th>
-                    <th>Capacity</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        <div class="cards"></div>
         @section Scripts{
         <script src="~/js/rockets/rocket.js"></script>
-        <script src="~/js/rockets/rocket.all.js"></script>
+        <script src="~/js/rockets/rocket.customerview.js"></script>
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     }
     </body>
