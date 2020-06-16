@@ -4,24 +4,26 @@
 }
 
 <body id="booking-index">
-    <h1>FinalBookingStage</h1>
-    <form asp-action="FinalBookingStage">
-        @for (int i = 0; i < Model.SeatsToBook.Length; i++)
-        {
-            <div>
-                <input asp-for="Customers[i].SeatNumber" value="@Model.SeatsToBook[i]" hidden />
-            </div>
-            <div>
-                <input asp-for="Customers[i].ExpeditionId" value="@Model.Expedition.ExpeditionId" hidden />
-            </div>
+    <div class="bg-dark w-100 p-3 rounded">
+        <h1>FinalBookingStage</h1>
+        <form asp-action="FinalBookingStage">
+            @for (int i = 0; i < Model.SeatsToBook.Length; i++)
+            {
+                <div>
+                    <input asp-for="Customers[i].SeatNumber" value="@Model.SeatsToBook[i]" hidden />
+                </div>
+                <div>
+                    <input asp-for="Customers[i].ExpeditionId" value="@Model.Expedition.ExpeditionId" hidden />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Customers[i].FullName">Full name, for seat @Model.SeatsToBook[i] :</label>
+                    <input asp-for="Customers[i].FullName" placeholder="Rikard Skoglund" required /> 
+                </div>
+            }
             <div class="form-group">
-                <label asp-for="Customers[i].FullName">Full name</label>
-                <input asp-for="Customers[i].FullName" placeholder="Rikard Skoglund" required /> <p>for seat @Model.SeatsToBook[i]</p>
+                <input type="submit" value="Confirm Booking!" class="btn btn-primary" />
             </div>
-        }
-        <div class="form-group">
-            <input type="submit" value="Confirm Booking!" class="btn btn-primary" />
-        </div>
-    </form>
+        </form>
+    </div>
 </body>
 
